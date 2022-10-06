@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+            {{ form.hidden_tag() }}
+            <img style="margin:5% ;" class="mb-4" src="https://freepngimg.com/thumb/logo/172694-logo-suzuki-free-download-image.png" width="25%" height="40%" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Kérlek regisztrálj az oldalra!
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="Felhasználónév") }}
+
+            {{ form.email_address.label() }}
+            {{ form.email_address(class="form-control", placeholder="Email Cím") }}
+
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control", placeholder="Jelszó") }}
+
+            {{ form.password2.label() }}
+            {{ form.password2(class="form-control", placeholder="Jelszó ismét") }}
+
+            <br>
+
+            <div class="checkbox mb-3">
+               <h6>Már van fiókod?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Bejelentkezés</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</body>
+{% endblock %}
